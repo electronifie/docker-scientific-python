@@ -13,3 +13,6 @@ RUN yum install -y gfortran lapack atlas python-setuptools gcc gcc-c++ \
   python-devel postgresql git libxml2-devel libpqxx-devel libxslt-devel libjpeg-devel \
   && easy_install pip
 
+ADD requirements.txt /tmp
+RUN pip install -r /tmp/requirements.txt && rm -f /tmp/requirements.txt
+
